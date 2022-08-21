@@ -1,0 +1,13 @@
+const mongoose = require("mongoose");
+require("dotenv").config({ path: "./.env" });
+ const clusterUrl = "mongodb+srv://youssef:Aa20114021@cluster0.iiq7lct.mongodb.net/?retryWrites=true&w=majority"
+
+const connectDb = async () => {
+  try {
+    await mongoose.connect(clusterUrl);
+    console.log("db is successfuly connected");
+  } catch (error) {
+    console.log("connection to db is failed ");
+  }
+};
+module.exports = connectDb
